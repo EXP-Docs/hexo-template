@@ -6,7 +6,7 @@
 #------------------------------------------------
 
 PORT=4000
-IMAGE_NAME="expm02/hexo-blog"
+IMAGE_NAME="expm02/hexo-template"
 CONTAINER_NAME="hexo-blog"
 
 set -- `getopt p: "$@"`
