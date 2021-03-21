@@ -1,6 +1,7 @@
 ---
 title: 使用 Hexo 在 Github 搭建个人网站
 date: 2021-03-21 16:39:24
+summary: 这是一篇示例文章
 top: true
 cover: false
 categories: 
@@ -10,16 +11,23 @@ tags:
 - Github
 ---
 
+## 前言
+
+下文中的 [`hexo-template`](https://github.com/lyy289065406/hexo-template)、[`articles`](https://github.com/lyy289065406/articles)、[https://exp-blog.com](https://exp-blog.com) 均仅用于示例说明，实际使用时，可按需自行更名。
+
+另模板仓库所提供脚本适用于 Linux/Windows/Mac 三端，下文中提及的 `*.sh` 均有配套的 `*.ps1` 脚本，以应对在不同环境下的使用，且使用方法均是一致的。
+
+
 ## 简介
 
-使用 [Hexo](https://hexo.io/docs/) 可以在 Github Page 搭建个人博客，但从零开始搭建过程较为繁琐，故做了此模板以简化创建流程。
+使用 [Hexo](https://hexo.io/docs/) 可以在 Github Page 搭建个人博客，但从零开始搭建过程较为繁琐，故在 Github 做了 [`hexo-template`](https://github.com/lyy289065406/hexo-template) 模板仓库，以简化创建流程。
 
-Hexo 至少需要两个相关的 Github 仓库，如：
+另对于 Hexo ，至少需要两个相关的 Github 仓库：
 
 - [`hexo-template`](https://github.com/lyy289065406/hexo-template)： 用于【管理】和【数据存储】，可运行测试环境
 - [`articles`](https://github.com/lyy289065406/articles)： 用于生产环境【展示】内容
 
-> Fork [`hexo-template`](https://github.com/lyy289065406/hexo-template) 并改名，即可作为自定义博客的管理后台；[`articles`](https://github.com/lyy289065406/articles) 则自建一个任意命名的空仓库即可；下文会继续沿用这两个名称以便于说明
+> Fork [`hexo-template`](https://github.com/lyy289065406/hexo-template) 并改名，即可作为自定义博客的管理后台
 
 
 各个环境的站点 URL 如下：
@@ -28,7 +36,6 @@ Hexo 至少需要两个相关的 Github 仓库，如：
 - 线上测试环境： [https://lyy289065406.github.io/hexo-template/](https://lyy289065406.github.io/hexo-template/)
 - 线上生产环境： [https://exp-blog.com](https://exp-blog.com) 或 [https://lyy289065406.github.io/articles/](https://lyy289065406.github.io/articles/)
 
-> 域名只是举例，实际使用时按需修改即可
 
 
 ## 部署说明
