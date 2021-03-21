@@ -14,7 +14,7 @@ timezone: 'Asia/Shanghai'
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 # root 要设置为 repo 名称，否则 css 等文件会无法找到路径而渲染失败
-url: https://exp-blog.com
+url: https://lyy289065406.github.io
 root: /
 # permalink: :year/:month/:day/:title/
 # permalink: :title.html
