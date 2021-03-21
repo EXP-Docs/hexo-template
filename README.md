@@ -1,21 +1,28 @@
-# EXP-BLOG（Hexo）
+# Hexo-Template
 
-> EXP 技术博客（Hexo版）
+> Hexo 博客创建模板
 
 ------
 
 ## 简介
 
-此博客是利用 [Hexo](https://hexo.io/docs/) 搭建的，有两个相关的 Github 仓库：
+使用 [Hexo](https://hexo.io/docs/) 可以在 Github Page 搭建个人博客，但从零开始搭建过程较为繁琐，故做了此模板以简化创建流程。
 
-- [`hexo-blog`](https://github.com/lyy289065406/hexo-blog)： 用于【管理】和【数据存储】，可运行测试环境
+Hexo 至少需要两个相关的 Github 仓库，如：
+
+- [`hexo-template`](https://github.com/lyy289065406/hexo-template)： 用于【管理】和【数据存储】，可运行测试环境
 - [`articles`](https://github.com/lyy289065406/articles)： 用于生产环境【展示】内容
+
+> Fork [`hexo-template`](https://github.com/lyy289065406/hexo-template) 并改名，即可作为自定义博客的管理后台；[`articles`](https://github.com/lyy289065406/articles) 则自建一个任意命名的空仓库即可；下文会继续沿用这两个名称以便于说明
+
 
 各个环境的站点 URL 如下：
 
 - 本地测试环境： [http://127.0.0.1:4000](http://127.0.0.1:4000)
-- 线上测试环境： [https://lyy289065406.github.io/hexo-blog/](https://lyy289065406.github.io/hexo-blog/)
+- 线上测试环境： [https://lyy289065406.github.io/hexo-template/](https://lyy289065406.github.io/hexo-template/)
 - 线上生产环境： [https://exp-blog.com](https://exp-blog.com) 或 [https://lyy289065406.github.io/articles/](https://lyy289065406.github.io/articles/)
+
+> 域名只是举例，实际使用时按需修改即可
 
 
 ## 部署说明
@@ -24,11 +31,11 @@
 
 - 任意找一台 Linux/Windows/Mac 服务器（阿里云、腾讯云等）
 - 安装 Docker
-- 把当前仓库 checkout 到服务器： `git clone https://github.com/lyy289065406/hexo-blog`
+- 把当前仓库 checkout 到服务器： `git clone https://github.com/lyy289065406/hexo-template`
 - 新建名为 articles 的空仓库（用于发布正式环境的博客内容）： `https://github.com/lyy289065406/articles`
 - 设置宿主机可使用 SSH 与 Github 连接（用于把 Hexo 内容发布到正式环境），可参考 [官方教程](https://help.github.com/en/articles/connecting-to-github-with-ssh)：主要就是把配置存储在 `~/.ssh/` 下的 SSH 公钥设置到 Github （首次设置完成后须在宿主机执行 `ssh -T git@github.com` 命令信任连接）
 
-> [`hexo-blog`](https://github.com/lyy289065406/hexo-blog) 和 [`articles`](https://github.com/lyy289065406/articles) 两个仓库均要开通 GitHub Pages 服务
+> [`hexo-template`](https://github.com/lyy289065406/hexo-template) 和 [`articles`](https://github.com/lyy289065406/articles) 两个仓库均要开通 GitHub Pages 服务
 
 
 ### 初始化环境
@@ -101,7 +108,7 @@ tags:
 - `git commit -m "deploy to test"`
 - `git push`
 
-> 线上测试环境 URL： [https://lyy289065406.github.io/hexo-blog/](https://lyy289065406.github.io/hexo-blog/)
+> 线上测试环境 URL： [https://lyy289065406.github.io/hexo-template/](https://lyy289065406.github.io/hexo-template/)
 
 
 ### 发布内容（线上正式环境）
@@ -119,7 +126,7 @@ tags:
 ## 目录说明
 
 ```
-hexo-blog
+hexo-template
 ├── hexo ................................. 通过 hexo init 命令生成的工作目录
 │   ├── node_modules ..................... 插件目录，npm install 命令会根据 package.json 安装
 │   ├── themes ........................... 主题目录，从 https://hexo.io/themes/ 按喜好选择即可
