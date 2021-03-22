@@ -6,7 +6,7 @@
 
 ## 前言
 
-下文中的 [`hexo-template`](https://github.com/lyy289065406/hexo-template)、[`articles`](https://github.com/lyy289065406/articles)、[exp-blog.com](https://exp-blog.com) 均仅用于示例说明，实际使用时，可按需自行更名。
+下文中的 [`hexo-template`](https://github.com/lyy289065406/hexo-template)、[`articles`](https://github.com/lyy289065406/articles)、[`exp-blog.com`](https://exp-blog.com) 均仅用于示例说明，实际使用时，可按需自行更名。
 
 另本仓库所提供脚本适用于 Linux/Windows/Mac 三端，故下文中提及的 `*.sh` 均有配套的 `*.ps1` 脚本，以应对在不同环境下的使用，且使用方法均是一致的。
 
