@@ -253,5 +253,8 @@ tags:
 - 《[基于Hexo的matery主题搭建博客并深度优化](https://juejin.im/post/6844904082042257415)》
 - 《[Hexo 主题 Matery 配置](https://juejin.im/post/6844904147922190344)》
 - 《[Hexo - 使文章依文章分類為資料夾名稱置放](https://usedfire.net/Notes/Hexo/make-hexo-post-category-by-folder/)》
+- 《[自动化多线部署 Hexo 博客](https://senorui.top/posts/17d1.html)》
+- 《[利用 Github Actions 自动部署 Hexo 博客](https://sanonz.github.io/2020/deploy-a-hexo-blog-from-github-actions/)》
+  
 
 </details>
