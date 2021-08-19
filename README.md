@@ -17,8 +17,8 @@
 
 对于 Hexo ，至少需要两个相关的 Github 仓库支持：
 
-- [`hexo-template`](https://github.com/lyy289065406/hexo-template)： 用于【管理】和【数据存储】，可运行测试环境
-- [`articles`](https://github.com/lyy289065406/articles)： 用于生产环境【展示】内容
+- [`hexo-template`](https://github.com/lyy289065406/hexo-template)： 源码仓库，用于【管理】和【数据存储】，可运行测试环境
+- [`articles`](https://github.com/lyy289065406/articles)： 静态页面仓库，用于生产环境【展示】内容
 
 > [`hexo-template`](https://github.com/lyy289065406/hexo-template) 即本仓库，Fork 之并改名，即可作为自定义博客的管理后台
 
@@ -47,12 +47,12 @@
 
 初始化用于 Hexo 运行的 Docker 环境镜像：
 
-`./init.sh -e "${GITHUB_EMAIL}" -u "${GITHUB_USER}" -n "${DEPLOY_REPO_NAME}" -d "${BLOG_DOMAIN}"`
+`./init.sh -e "${GIT_EMAIL}" -u "${GIT_USER}" -n "${DEPLOY_REPO_NAME}" -d "${BLOG_DOMAIN}"`
 
 其中要用到的参数如下：
 
-- `GITHUB_EMAIL`： Github 的 Email
-- `GITHUB_USER`： Github 的账号
+- `GIT_EMAIL`： Github 的 Email
+- `GIT_USER`： Github 的账号
 - `DEPLOY_REPO_NAME`： 正式环境的 Github 仓库名称，用于发布博客内容（可以新建仓库，但不能是当前仓库）
 - `BLOG_DOMAIN`: 博客域名，若未申请可留空（此时自动使用 Github Page 的子域名）
 
@@ -169,6 +169,7 @@ hexo-template
 ├── exec.sh/ps1 .......................... 利用 docker 环境执行任意 hexo 命令的脚本
 ├── to_sha256.sh/ps1 ..................... 用于设置文章密码的脚本
 ├── index.html ........................... 可自动跳转到 hexo/public/index.html 页面 
+├── imgs ................................. README 的引用图片 
 └── README.md ............................ 本仓库的说明文档
 ```
 
@@ -241,6 +242,39 @@ tags:
 </details>
 
 <details>
+<summary><b>关于自动发布</b></summary>
+<br/>
+
+如前面定义：
+
+- [`hexo-template`](https://github.com/lyy289065406/hexo-template)： 源码仓库
+- [`articles`](https://github.com/lyy289065406/articles)： 静态页面仓库
+
+【源码仓库】适用于 GitHub Action 自动发布到【静态页面仓库】，具体步骤如下：
+
+先在本地执行命令 `ssh-keygen -f github-deploy-key` 生成 ssh 密钥对，当前目录下会有 `github-deploy-key` 和 `github-deploy-key.pub` 两个文件。
+
+在【源码仓库】新增 Secrets ： `Settings -> Secrets -> Add a new secret`，其中 Name 为 `DEPLOY_PRIVATE_KEY`， Value 为 `github-deploy-key` 的内容。
+
+另外确保【源码仓库】已有这些 Secrets （如前文）：
+
+- `GIT_EMAIL`： Github 的 Email
+- `GIT_USER`： Github 的账号
+- `DEPLOY_REPO_NAME`： 正式环境的 Github 仓库名称，用于发布博客内容（可以新建仓库，但不能是当前仓库）
+- `BLOG_DOMAIN`: 博客域名，若未申请可留空（此时自动使用 Github Page 的子域名）
+
+![](./imgs/1.png)
+
+在【静态页面仓库】新增 Deploy Key ： `Settings -> Deploy keys -> Add deploy key`，其中 Title 为 `DEPLOY_PUBLIC_KEY`，  Key 为 `github-deploy-key.pub` 的内容，同时勾选 `Allow write access`。
+
+![](./imgs/2.png)
+
+尔后每次提交内容到【源码仓库】时，都会自动触发 [GitHub Action](.github/workflows/auto_deploy.yml)，发布更新内容到【静态页面仓库】。
+
+</details>
+
+
+<details>
 <summary><b>参考文档</b></summary>
 <br/>
 
@@ -254,7 +288,7 @@ tags:
 - 《[Hexo 主题 Matery 配置](https://juejin.im/post/6844904147922190344)》
 - 《[Hexo - 使文章依文章分類為資料夾名稱置放](https://usedfire.net/Notes/Hexo/make-hexo-post-category-by-folder/)》
 - 《[自动化多线部署 Hexo 博客](https://senorui.top/posts/17d1.html)》
-- 《[利用 Github Actions 自动部署 Hexo 博客](https://sanonz.github.io/2020/deploy-a-hexo-blog-from-github-actions/)》
+- 《[利用 Github Actions 自动部署 Hexo 博客](https://sanonz.github.io/2020/deploy-a-hexo-template-from-github-actions/)》
   
 
 </details>
