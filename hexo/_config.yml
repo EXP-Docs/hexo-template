@@ -33,6 +33,14 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - README.md
+  - '*.html'
+  - '*.js'
+  - '*.txt'
+  - '*.sh'
+  - '*.ps1'
+  - '*.zip'
+  
 
 # Writing
 new_post_name: :title.md # File name of new posts
