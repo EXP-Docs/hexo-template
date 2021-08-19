@@ -32,14 +32,11 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+
+# 编译时不渲染某些类型的文件（直接复制去 public 目录），如 js、html 等
+# 若是子目录下的文件，需配置相对于 source 的相对路径，否则无效
 skip_render:
   - README.md
-  - '*.html'
-  - '*.js'
-  - '*.txt'
-  - '*.sh'
-  - '*.ps1'
-  - '*.zip'
   
 
 # Writing
