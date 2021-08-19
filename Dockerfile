@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:14
 MAINTAINER EXP
 ARG github_mail=289065406@qq.com
 ARG github_user=lyy289065406

@@ -20,12 +20,12 @@ jobs:
     # from: https://github.com/actions/checkout
     - name: Checkout Repository master branch
       uses: actions/checkout@v2
-      
+
     # from: https://github.com/actions/setup-node  
-    - name: Setup Node.js 14.x 
-      uses: actions/setup-node@master
-      with:
-        node-version: "14.x"
+    # - name: Setup Node.js 14.x 
+    #   uses: actions/setup-node@master
+    #   with:
+    #     node-version: "14.x"
     
     - name: Setup Git Infomation
       run: |-
@@ -41,6 +41,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
 
+    # 此处会即时构建 nodejs 的 docker 环境，安装 npm modules
     - name: Init Hexo Environment
       run: |
         ./init.sh -e "${{ secrets.GIT_EMAIL }}" -u "${{ secrets.GIT_USER }}" -n "${{ secrets.DEPLOY_REPO_NAME }}" -d "${{ secrets.BLOG_DOMAIN }}"
