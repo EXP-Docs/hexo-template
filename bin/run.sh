@@ -6,8 +6,8 @@
 #------------------------------------------------
 
 PORT=4000
-IMAGE_NAME="expm02/hexo-blog"
-CONTAINER_NAME="hexo-blog"
+IMAGE_NAME="expm02/hexo-template"
+CONTAINER_NAME="hexo-template"
 
 set -- `getopt p: "$@"`
 while [ -n "$1" ]

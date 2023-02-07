@@ -5,7 +5,7 @@
 # bin/stop.sh
 #------------------------------------------------
 
-CONTAINER_NAME="hexo-blog"
+CONTAINER_NAME="hexo-template"
 DOCKER_ID=`docker ps -aq --filter name=${CONTAINER_NAME}`
 if [ ! -z "$DOCKER_ID" ]; then
     docker stop $DOCKER_ID

@@ -11,7 +11,7 @@ GITHUB_USER="lyy289065406"            # -u : Github 账号
 DEPLOY_REPO_NAME="articles"           # -n : 发布 Hexo 博客内容的 Github 仓库名称（不能是当前仓库）
 BLOG_DOMAIN=""                        # -d : 博客域名，如 exp-blog.com
 HEXO_CONFIG="./hexo/_config.yml"      # Hexo 博客配置文件路径
-IMAGE_NAME="expm02/hexo-blog"         # 构建的 Docker 镜像名称
+IMAGE_NAME="expm02/hexo-template"         # 构建的 Docker 镜像名称
 
 
 # 使用说明

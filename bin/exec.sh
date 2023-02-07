@@ -6,7 +6,7 @@
 #------------------------------------------------
 
 HEXO_CMD=$*
-IMAGE_NAME="expm02/hexo-blog"
+IMAGE_NAME="expm02/hexo-template"
 
 # 因为 hexo 主要是通过 ssh 发布内容到 Github 仓库的，故此处挂载宿主机的 id_rsa 和 known_hosts 是必须的
 # known_hosts 是在配置公钥 id_rsa.pub 到 Github 后，执行命令 ssh -T git@github.com 生成的

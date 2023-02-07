@@ -12,8 +12,8 @@ if (${p} -lt 0) {
     $PORT = ${p}
 }
 
-$IMAGE_NAME = "expm02/hexo-blog"
-$CONTAINER_NAME = "hexo-blog"
+$IMAGE_NAME = "expm02/hexo-template"
+$CONTAINER_NAME = "hexo-template"
 
 docker run -d --rm `
         -v "${PWD}/hexo:/hexo" `

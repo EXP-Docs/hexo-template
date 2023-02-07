@@ -47,7 +47,7 @@
 
 初始化用于 Hexo 运行的 Docker 环境镜像：
 
-`./init.sh -e "${GIT_EMAIL}" -u "${GIT_USER}" -n "${DEPLOY_REPO_NAME}" -d "${BLOG_DOMAIN}"`
+`bin/init.sh -e "${GIT_EMAIL}" -u "${GIT_USER}" -n "${DEPLOY_REPO_NAME}" -d "${BLOG_DOMAIN}"`
 
 其中要用到的参数如下：
 
@@ -56,19 +56,19 @@
 - `DEPLOY_REPO_NAME`： 正式环境的 Github 仓库名称，用于发布博客内容（可以新建仓库，但不能是当前仓库）
 - `BLOG_DOMAIN`: 博客域名，若未申请可留空（此时自动使用 Github Page 的子域名）
 
-> 示例： `./init.sh -e "289065406@qq.com" -u "lyy289065406" -n "articles" -d "exp-blog.com"`
+> 示例： `bin/init.sh -e "289065406@qq.com" -u "lyy289065406" -n "articles" -d "exp-blog.com"`
 
 
 ### 插件安装（可选） 
 
-- 安装： `./exec.sh npm i --save ${PLUGIN_NAME}`
-- 卸载： `./exec.sh npm uninstall ${PLUGIN_NAME}`
-- 更新： `./exec.sh npm install --save`
+- 安装： `bin/exec.sh npm i --save ${PLUGIN_NAME}`
+- 卸载： `bin/exec.sh npm uninstall ${PLUGIN_NAME}`
+- 更新： `bin/exec.sh npm install --save`
 
 
 ### 添加文章
 
-可以通过命令直接创建新文章： `./exec.sh hexo new ${ARTICLE_TITLE}`
+可以通过命令直接创建新文章： `bin/exec.sh hexo new ${ARTICLE_TITLE}`
 
 该命令会在 [`hexo/source/_posts/`](hexo/source/_posts) 目录下创建 2 个文件：
 
@@ -88,21 +88,21 @@ tags:
 
 ### 构建博客内容
 
-执行 `./build.sh` 或 `./build.sh -e test` 均可。
+执行 `bin/build.sh` 或 `bin/build.sh -e test` 均可。
 
 该命令会根据 [`hexo/source/`](hexo/source) 目录下的 markdown 文件在 [`hexo/public/`](hexo/public) 目录下生成 html 格式的站点内容。
 
 
 ### 启动 Hexo 服务（本地测试环境）
 
-执行 `./run.sh` 或 `./run.sh -p ${PORT}` 均可，服务默认在 4000 端口。
+执行 `bin/run.sh` 或 `bin/run.sh -p ${PORT}` 均可，服务默认在 4000 端口。
 
 > 本地测试环境 URL： [http://127.0.0.1:4000](http://127.0.0.1:4000) 
 
 
 ### 停止 Hexo 服务
 
-执行 `./stop.sh` 即可。
+执行 `bin/stop.sh` 即可。
 
 
 ### 发布内容（线上测试环境）
@@ -118,10 +118,10 @@ tags:
 
 ### 发布内容（线上正式环境）
 
-执行 `./build.sh -e prod` 即可。
+执行 `bin/build.sh -e prod` 即可。
 
-- 若有自定义域名，直接执行： `./build.sh -e prod`
-- 若无自定义域名，则需声明，此时会使用 Github 子域名： `./build.sh -e prod -d no`
+- 若有自定义域名，直接执行： `bin/build.sh -e prod`
+- 若无自定义域名，则需声明，此时会使用 Github 子域名： `bin/build.sh -e prod -d no`
 
 > 线上正式环境 URL：
 <br/>　　已绑定自定义域名： [https://exp-blog.com](https://exp-blog.com) 
