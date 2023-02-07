@@ -44,9 +44,9 @@ jobs:
     # 此处会即时构建 nodejs 的 docker 环境，安装 npm modules
     - name: Init Hexo Environment
       run: |
-        ./init.sh -e "${{ secrets.GIT_EMAIL }}" -u "${{ secrets.GIT_USER }}" -n "${{ secrets.DEPLOY_REPO_NAME }}" -d "${{ secrets.BLOG_DOMAIN }}"
+        bin/init.sh -e "${{ secrets.GIT_EMAIL }}" -u "${{ secrets.GIT_USER }}" -n "${{ secrets.DEPLOY_REPO_NAME }}" -d "${{ secrets.BLOG_DOMAIN }}"
 
     - name: Build And Deploy Hexo 
       run: |
-        ./build.sh -e prod
+        bin/build.sh -e prod
 
