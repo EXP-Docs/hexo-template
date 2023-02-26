@@ -4,6 +4,10 @@
 
 ------
 
+此仓库已不再维护，推荐使用更简单的 [docker 一键部署 hexo + matery](https://github.com/lyy289065406/hexo-matery-template)
+
+------
+
 ## 前言
 
 下文中的 [`hexo-template`](https://github.com/lyy289065406/hexo-template)、[`articles`](https://github.com/lyy289065406/articles)、[`exp-blog.com`](https://exp-blog.com) 均仅用于示例说明，实际使用时，可按需自行更名。
