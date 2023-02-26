@@ -4,7 +4,7 @@
 
 ------
 
-此仓库已不再维护，推荐使用更简单的 [docker 一键部署 hexo + matery](https://github.com/lyy289065406/hexo-matery-template)
+<font color="red">此仓库已不再维护，推荐使用更简单的</font> [docker 一键部署 hexo + matery](https://github.com/lyy289065406/hexo-matery-template)
 
 ------
 
